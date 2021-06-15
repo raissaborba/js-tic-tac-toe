@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe by Raissa</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/244820a7cb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="form-description">
+                <h1>Welcome to Tic-tac-toe!</h1>
+                <p>Enter your names to start playing</p>
+            </div>
+            <form class="player-info">
+                <div class="form-group">
+                  <label for="playerOne">Player 1 (X)</label>
+                  <input type="text" class="form-control" id="playerOne" placeholder="Name for player 1">
+                </div>
+          
+                <div class="form-group">
+                  <label for="playerTwo">Player 2 (O)</label>
+                  <input type="text" class="form-control" id="playerTwo" placeholder="Name for player 2">
+                </div>
+          
+                <button type="submit" class="btn-primary">Let's play</button>
+              </form>
+        </div>
+        <div class="current-player">
+            <p class="current-player-message"></p>
+        </div>
+        <div class="board" id="app-board">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="result-message">
+            <div id="result-text"></div>
+            <button class="btn-primary" id="btn-restart">Play again</button>
+        </div>  
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+            <a href="https://github.com/raissaborba" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/raissavborba/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:raissavborba@gmail.com"><i class="fas fa-envelope"></i></a>
+          </div>
+          <div class="footer-copyright">
+            This page was created by Raissa Borba <i class="fas fa-heart"></i>.
+          </div>
+    </div>
+    
+    <script src="./js/main.js"></script>
+</body>
+</html>
