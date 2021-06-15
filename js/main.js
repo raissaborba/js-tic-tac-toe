@@ -1,8 +1,8 @@
 const allCells = document.querySelectorAll('.cell');
 const restartButton = document.getElementById('btn-restart');
 const resultText = document.getElementById('result-text');
-const turnText = document.querySelector('.current-player-message')
-const resultPage = document.querySelector('.result-message')
+const turnText = document.querySelector('.current-player-message');
+const resultPage = document.querySelector('.result-message');
 
 const playerOne = {
     value: 'x',
@@ -16,28 +16,28 @@ let currentPlayer;
 
 // Players must enter their names to start (extra);
 // A form page is shown, and it closes once the names are filled in. Then, the game starts.
-const namesForm = document.querySelector('.player-info')
+const namesForm = document.querySelector('.player-info');
 namesForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const playerOneName = e.currentTarget.querySelector('#playerOne');
-    const playerTwoName = e.currentTarget.querySelector('#playerTwo');
-    playerOne.name = playerOneName.value;
-    playerTwo.name = playerTwoName.value;
+    e.preventDefault()
+    const playerOneName = e.currentTarget.querySelector('#playerOne')
+    const playerTwoName = e.currentTarget.querySelector('#playerTwo')
+    playerOne.name = playerOneName.value
+    playerTwo.name = playerTwoName.value
     if (playerOne.name && playerTwo.name) {
         const formPage = document.querySelector('.form')
         formPage.style.display = 'none'
-        startGame();
+        startGame()
     } else {
         alert('You must enter 2 player\'s name to start playing')
     }
-})
+});
 
 // This function starts the game. It assigns the current player to playerOne.
 // A message is shown every turn, so players know when it's their turn;
 // I empty the cell ellements at the begining of every round;
 // Result page is hidden (when the game is reset).
-function startGame () {
-    currentPlayer = playerOne;
+function startGame() {
+    currentPlayer = playerOne
     turnText.innerText = `It'\s ${currentPlayer.name}'s turn`
     resultText.innerText = ''
     allCells.forEach(cell => {
@@ -50,7 +50,7 @@ function startGame () {
 
 // This function switch turns between players after every turn;
 // it shows a message to the players so they know their turn
-function switchTurn () {
+function switchTurn() {
     currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
     turnText.innerText = `It'\s ${currentPlayer.name}'s turn`
 };
@@ -94,7 +94,7 @@ function hasAWinner(playerClass) {
             return allCells[index].classList.contains(playerClass)
         })
     })
-}
+};
 
 // if every cell has a class but it does not corresponde to the winning combinations, then it's a draw
 function isDraw() {
@@ -105,7 +105,7 @@ function isDraw() {
 
 // if draw is true, the game is over, we get a message and remove event listener so players can no longer play;
 // if draw is false, the game is over, winner's name is shown and event listener is removed
-function finishGame (draw) {
+function finishGame(draw) {
     if (draw) {
         resultPage.style.display = 'flex'
         resultText.innerText = 'It\'s a draw!'
@@ -120,7 +120,7 @@ function finishGame (draw) {
         })
     }
     
-}
+};
 
 // restart button in the result page restart the game
 restartButton.addEventListener('click', startGame);
